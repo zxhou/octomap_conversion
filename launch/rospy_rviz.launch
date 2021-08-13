@@ -1,0 +1,6 @@
+<launch>
+  <node name="rospy_rviz_node" pkg="rospy_rviz" type="rospy_rviz.py" output="screen"/>
+  <param name="file_path" value="/media/hzx/data/RobotCar/2014-05-19-13-20-57/pointcloud_20m_10overlap/" />  
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find rospy_rviz)/rviz/rospy_rviz.rviz" />
+  <node name="ogm_node" pkg="rospy_rviz" type="rospy_rviz_node" output="screen" args="" />
+</launch>
