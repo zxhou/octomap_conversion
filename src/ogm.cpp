@@ -15,6 +15,7 @@
 
 #include <octomap_ros/conversions.h>
 #include <octomap/octomap.h>
+#include <octomap_msgs/Octomap.h>
 
 
 
@@ -34,8 +35,9 @@ void velodyneHandler(const sensor_msgs::PointCloud2ConstPtr& msg)
     ros::Publisher octo_pub = nh.advertise<octomap_msgs::Octomap>("/octomap", 10);
 
     octomap::Pointcloud octo_cloud;
-//    octomap::pointCloud2ToOctomap(*msg, octo_cloud);
     octomap::pointCloud2ToOctomap(*msg, octo_cloud);
+
+    
 
     std::stringstream ssTime;
     ssTime << std::setprecision(16) << timestamp;
